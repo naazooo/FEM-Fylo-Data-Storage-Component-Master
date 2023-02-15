@@ -1,0 +1,153 @@
+/* MOBILE */
+
+:root{
+    --vd-blue:hsl(229, 57%, 11%);
+    --bg-progress: hsla(229, 57%, 11%, 50%);
+    --d-blue:hsl(228, 56%, 26%);
+    --g-blue:hsl(229, 7%, 55%);
+    --p-blue:hsl(243, 100%, 93%);
+    --l-gradient:hsl(6, 100%, 80%);
+    --d-gradient:hsl(335, 100%, 65%);
+}
+
+body, p{
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body{
+    background: url(/images/bg-mobile.png) no-repeat var(--vd-blue);
+    display: grid;
+    min-height: 100vh;
+    align-items: center;
+}
+
+section{
+    background-color: var(--d-blue);
+    
+}
+
+.sec1{
+    padding: 3em 5.5em 3em 3em;
+    border-radius: 10px 100px 10px 10px;
+}
+
+.icons{
+    background-color: var(--vd-blue);
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.icons_group{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+}
+
+.logo{margin-bottom: 2em;}
+
+.sec2{
+    padding: 2.5em 2em 3.7em 2.9em;
+    color: var(--p-blue);
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+main{
+    display: grid;
+    row-gap: 1.2em;
+    margin-inline: 1.5em;
+    max-width: 333px;
+}
+
+.unit {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+progress{
+    width: 100%;
+    appearance: none;
+    height: 1.5em;
+    margin-block: 1em 0.5em;
+}
+
+progress::-webkit-progress-bar{
+    background-color: var(--bg-progress);
+    border-radius: 20px;
+    padding: 0.25em;
+}
+
+progress::-webkit-progress-value{
+    background-image: 
+    radial-gradient(circle at 96% center, white 5px, transparent 5px),
+    linear-gradient(90deg, var(--l-gradient) 0%, var(--d-gradient) 100% );
+    border-radius: 20px;
+    
+}
+
+.remainder{
+    background-color: white;
+    color: var(--g-blue);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: max-content;
+    padding: 0.9em 1.8em;
+    position: absolute;
+    margin: 14px 0 0 42px;
+    border-radius: 12px;
+    column-gap: 0.8em;
+}
+
+
+/* DESKTOP */
+
+@media only screen and (min-width: 1000px) {
+    
+    body{
+        background: url(images/bg-desktop.png) no-repeat bottom, var(--vd-blue);
+        place-content: center;
+    }
+
+    main{
+       grid-template-columns: 1fr 2fr;
+       max-width: max-content;
+       column-gap: 2em;
+    }
+
+    .remainder{
+        margin: 0;
+        bottom: auto;
+        top: -45px;
+        right: 4em;
+    }
+
+    .remainder::after{
+        content: "";
+        position: absolute;
+        bottom: -1.5em;
+        right: 0;
+        height: 0;
+        width: 0;
+        border-top: 3em solid white;
+        border-left: 3em solid transparent;
+    }
+
+    .sec2{
+        text-align: left;
+        align-self: end;
+        padding: 3em;
+    }
+
+
+
+}
